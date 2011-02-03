@@ -174,7 +174,7 @@ file := $(PRODUCT_OUT)/grub/grub_stage2
 $(file) : $(my_files) 
 	@echo "target Creating: $@"
 	$(hide) cat $^ > $@
-ALL_PREBUILT += $(file)
+#ALL_PREBUILT += $(file)
 
 
 #############################################################################
@@ -189,7 +189,7 @@ $(grub_full) : $(grub_stage1) $(grub_stage2)
 	$(hide) rm -f $@
 	$(hide) dd if=$(grub_stage1) of=$@ bs=512 count=1 2>/dev/null
 	$(hide) dd if=$(grub_stage2) of=$@ bs=512 seek=1 2>/dev/null
-ALL_PREBUILT += $(grub_full)
+#ALL_PREBUILT += $(grub_full)
 
 endif # x86
 endif # ! sim
