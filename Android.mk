@@ -16,7 +16,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_SIMULATOR),true)
 ifeq ($(TARGET_ARCH),x86)
 
 include $(CLEAR_VARS)
@@ -192,4 +191,3 @@ $(grub_full) : $(grub_stage1) $(grub_stage2)
 #ALL_PREBUILT += $(grub_full)
 
 endif # x86
-endif # ! sim
